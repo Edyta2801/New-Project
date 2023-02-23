@@ -1,0 +1,126 @@
+<apex:page showHeader="false" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0">
+  <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <title>SLDS ResponsiveDesign Visualforce Page in Salesforce Mobile</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+      <apex:slds />
+    </head>
+    <body>
+      <!-- <body class="slds-scope slds-m-around_none"> -->
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          background-color: #344a72;
+          font-family: Raleway;
+        }
+
+        img {
+          min-width: 100%;
+          object-fit: fill;
+          opacity: 0.5;
+        }
+
+        .wrap {
+          padding: 30px;
+        }
+
+        a {
+          text-decoration: none;
+        }
+
+        .text {
+          position: absolute;
+          top: 5%;
+          left: 10%;
+          font-family: cursive;
+          font-size: 40px;
+          text-align: center;
+          font-weight: 700;
+          display: flex;
+          color: #344a72;
+        }
+
+        .four {
+          color: red;
+          font-size: 70px;
+        }
+
+        .info {
+          font-weight: normal;
+          font-size: 20px;
+          margin: 20px;
+        }
+
+        .left {
+          width: 100%;
+          position: relative
+        }
+
+        p {
+          text-align: center;
+          margin: 10px;
+          font-size: 30px;
+          font-weight: 600;
+        }
+
+        @keyframes slideInLeft {
+          0% {
+            transform: translateX(-100%);
+          }
+
+          100% {
+            transform: translateX(0);
+          }
+        }
+
+        .overlay {
+          position: absolute;
+          top: 20%;
+          left: 5%;
+          font-size: 50px;
+          text-align: center;
+          font-weight: 500;
+          display: flex;
+          background-color: whitesmoke;
+          background-size: 20px;
+          padding: 25px;
+          border: black;
+          border-style: solid;
+          animation-duration: 2s;
+          animation-timing-function: ease-in-out;
+          animation-delay: 0s;
+          animation-name: slideInLeft;
+          opacity: 0.4;
+          padding: 40px;
+          border-width:thin;
+        }
+
+        /* @media only screen and (max-width: 950px)  {
+             
+              .main{margin:15% 5%%}
+        
+        } */
+      </style>
+      <!-- <div class="slds-scope slds-m-around_none"> -->
+      <div class='main'>
+        <div class='left'>
+          <div class='img-wrapper'>
+            <img id="theImage" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Description of image here" />
+            <!-- </div> -->
+            <div class="overlay"> You have been unsubscribed. </div>
+          </div>
+          <div class='text'> Clothes <div class='four'>4 </div> You </div>
+        </div>
+      </div>
+      <!-- </div> -->
+    </body>
+  </html>
+</apex:page>

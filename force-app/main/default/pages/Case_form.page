@@ -1,0 +1,334 @@
+<apex:page lightningStyleSheets="true">
+  <!-- <apex:includeScript value="{!$Resource.file_js}"/> -->
+  <apex:slds />
+  <html lang="en">
+    <head>
+      <title>Case Form</title>
+      <meta http-equiv="Content-type" content="en; text/html; charset=UTF-8" />
+      <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    </head>
+    <body>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          background-color: #344a72 !important;
+          font-family: Raleway;
+        }
+
+        img {
+          max-width: 100%;
+          object-fit: cover;
+          height: 100vh;
+        }
+
+        .wrap {
+          padding: 10%;
+        }
+
+        a {
+          text-decoration: none;
+        }
+
+        .hidden {
+          display: none !important;
+        }
+
+        .main {
+          display: flex;
+          align-items: center;
+          position: relative;
+        }
+
+        .slds-button {
+          background: #344a72 !important;
+          color: white !important;
+          border: none !important;
+          border-radius: 5px !important;
+          cursor: pointer;
+          font-size: 15px !important;
+          margin: top:1.5rem !important;
+          padding: 15px !important:
+        }
+
+        #form>div>div:nth-child(6)>input {
+          padding: 10px !important;
+        }
+
+        .slds-button:hover {
+          background: rgb(1 118 211) !important;
+        }
+
+        .right {
+          background-color: #f2f2f2 !important;
+          padding-top: 10vh;
+          width: 100%;
+          height: 100vh;
+        }
+
+        .left {
+          width: 100%;
+          position: relative
+        }
+
+        p {
+          text-align: center;
+          margin: 10px;
+          font-size: 30px;
+          font-weight: 600;
+        }
+
+        .text {
+          position: absolute;
+          top: 5%;
+          left: 10%;
+          font-family: cursive;
+          font-size: 40px;
+          text-align: center;
+          font-weight: 700;
+          display: flex;
+          color: #344a72;
+        }
+
+        .four {
+          color: red;
+          font-size: 70px;
+        }
+
+        .info {
+          font-weight: normal;
+          font-size: 20px;
+          margin: 20px;
+        }
+
+        .overlay {
+          position: absolute;
+          top: -25%;
+          left: 20%;
+          font-size: 50px;
+          text-align: center;
+          font-weight: 500;
+          display: none;
+          padding: 25px;
+          color: skyblue;
+          font-family: italic;
+        }
+
+        .brand {
+          color: red;
+          font-size: 40px;
+          padding: 0 10px !important;
+          margin: 8px !important;
+          font-family: cursive;
+        }
+
+        @media screen and (max-width: 950px) {
+          .left {
+            display: none
+          }
+        }
+
+        @media screen and (max-width: 950px) {
+          .main {
+            margin: 15% 5%%
+          }
+        }
+
+        @media screen and (min-width: 950px) {
+          .overlay {
+            display: flex
+          }
+
+          ;
+        }
+
+        h2 {
+          text-align: center;
+          margin: 0 0 20px;
+        }
+
+        .form {
+          background-color: #f2f2f2 !important;
+          margin-top: 0 !important;
+          padding: 0 !important
+        }
+
+        .slds-scope .slds-has-error {
+          border-color: #C5000A;
+        }
+        .slds-scope img{
+           max-width: 100%;
+          height: 100vh;
+        }
+        .wrap p{
+          color:#344a72;
+        }
+       
+      </style>
+      <div class="slds-scope">
+        <div class='main'>
+          <div class='left'>
+            <div class='text'> Clothes <div class='four'>4 </div> You </div>
+            <div class='img-wrapper'>
+              <img id="theImage" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80" alt="Description of image here" />
+            </div>
+          </div>
+          <div class="right">
+            <div class="wrap">
+              <!-- <p>Get 10% OFF</p> -->
+              <p>Customer Support</p>
+              <p class='info'>Submit a case</p>
+              <div class="container-1">
+                <form lang='en' id="form" class="form" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST" style="background: #fafafa; margin-top:3rem; margin-left:auto; margin-right:auto; padding: 1rem 2rem; border-radius: .25rem; max-width: 600px;">
+                  <input type="hidden" name="orgid" value="00D68000000Z7A2" />
+                  <input type="hidden" name="retURL" value="https://britenetspzoo-dev-ed--c.develop.vf.force.com/apex/Thank_you_for_case" />
+                  <div class="slds-form">
+                    <div class="slds-form-element">
+                      <label class="slds-form-element__label" for="name">
+                        <abbr class="slds-required" title="required">* </abbr>Contact Name </label>
+                      <div class="slds-form-element__control">
+                        <input class="slds-input" id="name" maxlength="40" name="name" size="20" style="min-width: 275px;" type="text" />
+                        <br />
+                      </div>
+                      <div class="slds-form-element__help hidden" id="error-01">This field is required</div>
+                    </div>
+                    <div class="slds-form-element">
+                      <label class="slds-form-element__label" for="email">
+                        <abbr class="slds-required" title="required">* </abbr>Email </label>
+                      <div lang='en' class="slds-form-element__control">
+                        <input lang='en' class="slds-input" id="email" maxlength="80" name="email" size="20" style="min-width: 275px;" type="email" />
+                        <br />
+                      </div>
+                      <div class="slds-form-element__help hidden" id="error-01">This field is required</div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="phone">
+                          <abbr class="slds-required" title="required">* </abbr>Phone </label>
+                        <div lang='en' class="slds-form-element__control">
+                          <input lang='en' class="slds-input" id="phone" maxlength="80" name="phone" size="20" style="min-width: 275px;" type="text"
+                          pattern='[0-9]{9}' />
+                          <br />
+                        </div>
+                        <small>Format: 123456789</small>
+                        <div class="slds-form-element__help hidden" id="error-01">This field is required</div>
+                      </div>
+                    <div class="slds-form-element">
+                      <label class="slds-form-element__label" for="subject">
+                        <abbr class="slds-required" title="required">* </abbr>Subject </label>
+                      <div class="slds-form-element__control">
+                        <input class="slds-input" id="subject" maxlength="40" name="subject" size="20" style="min-width: 275px;" type="text" />
+                        <br />
+                      </div>
+                      <div class="slds-form-element__help hidden" id="error-01">This field is required</div>
+                    </div>
+                    <div class="slds-form-element">
+                      <label class="slds-form-element__label" for="type">
+                        <abbr class="slds-required" title="required">* </abbr>Type </label>
+                      <div class="slds-form-element__control">
+                        <div class="slds-select_container">
+                          <select class="slds-select" id="type" name="type" title="Type">
+                            <option>--None--</option>
+                            <option value="Payment">Payment</option>
+                            <option value="Shipment">Shipment</option>
+                          </select>
+                        </div>
+                        <div class="slds-form-element__help hidden" id="error-01">This field is required</div>
+                      </div>
+                    </div>
+                    <div class="slds-form-element">
+                        <label class="slds-form-element__label" for="description">
+                            Description
+                        </label>
+                        <div class="slds-form-element__control">
+                            <textarea class="slds-textarea" id="description" maxlength="32000" name="description" style="min-width: 275px; min-height: 50px; max-width: 600px; max-height: 300px;" type="text" wrap="soft"></textarea>
+                            <div style="text-align: right;">
+                                <span id="desc-counter" style="font-size:11px; color:#666;">0/1000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-form-element" style="text-align: center;">
+                      <input class="slds-button slds-m-top_xx-small" name="submit" style="display: block; width: 100%;margin-top: 1.5rem; margin-bottom: 0.1rem" type="submit" value="Submit" />
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="overlay"> 500+ Cool <p class='brand'>Clothing Brand</p> Names </div>
+        </div>
+      </div>
+      <script>
+        function validateForm() {
+          const nameEl = document.getElementById('name');
+          const emailEl = document.getElementById('email');
+          const phoneEl = document.getElementById('phone');
+          const subjectEl = document.getElementById('subject');
+          const typeEl = document.getElementById('type');
+          let ret = 0; // Exit code
+          if (!nameEl.value) {
+            nameEl.parentElement.parentElement.classList.add('slds-has-error');
+            nameEl.parentElement.parentElement.querySelector('.slds-form-element__help').classList.remove('hidden');
+            ret = 1;
+          } else {
+            nameEl.parentElement.parentElement.classList.remove('slds-has-error');
+            nameEl.parentElement.parentElement.querySelector('.slds-form-element__help').classList.add('hidden');
+          }
+          if (!emailEl.value) {
+            emailEl.parentElement.parentElement.classList.add('slds-has-error');
+            emailEl.parentElement.parentElement.querySelector('.slds-form-element__help').classList.remove('hidden');
+            ret = 3;
+          } else {
+            emailEl.parentElement.parentElement.classList.remove('slds-has-error');
+            emailEl.parentElement.parentElement.querySelector('.slds-form-element__help').classList.add('hidden');
+          }
+          if (!phoneEl.value) {
+            phoneEl.parentElement.parentElement.classList.add('slds-has-error');
+            phoneEl.parentElement.parentElement.querySelector('.slds-form-element__help').classList.remove('hidden');
+            ret = 2;
+          } else {
+            phoneEl.parentElement.parentElement.classList.remove('slds-has-error');
+            phoneEl.parentElement.parentElement.querySelector('.slds-form-element__help').classList.add('hidden');
+          }
+          if (!subjectEl.value) {
+            subjectEl.parentElement.parentElement.classList.add('slds-has-error');
+            subjectEl.parentElement.parentElement.querySelector('.slds-form-element__help').classList.remove('hidden');
+            ret = 5;
+          } else {
+            subjectEl.parentElement.parentElement.classList.remove('slds-has-error');
+            subjectEl.parentElement.parentElement.querySelector('.slds-form-element__help').classList.add('hidden');
+          }
+          if (!typeEl.selectedIndex) {
+            typeEl.parentElement.parentElement.classList.add('slds-has-error');
+            typeEl.parentElement.parentElement.querySelector('.slds-form-element__help').classList.remove('hidden');
+            ret = 6;
+          } else {
+            typeEl.parentElement.parentElement.classList.remove('slds-has-error');
+            typeEl.parentElement.parentElement.querySelector('.slds-form-element__help').classList.add('hidden');
+          }
+          return ret;
+        }
+        const formEl = document.getElementById('form');
+        formEl.addEventListener('submit', function(e) {
+          e.preventDefault();
+          let ret = validateForm();
+          if (!ret) {
+            // use .call to pass the form element as the context for the submit function
+            HTMLFormElement.prototype.submit.call(formEl);
+          }
+        });
+
+        // Description counter
+        const descEl = document.getElementById('description');
+        const descCounterEl = document.getElementById('desc-counter');
+        const MAX_DESC = 1000;
+        descEl.addEventListener('input', function (e) {
+            descCounterEl.innerText = `${descEl.value.length}/${MAX_DESC}`;
+        });
+      </script>
+    </body>
+  </html>
+</apex:page>
